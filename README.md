@@ -7,7 +7,7 @@ Stable tag: 1.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Adjusts text color dynamically to ensure sufficient contrast with background colors, eliminating contrast errors.
+Ajusta el color del texto dinámicamente para garantizar un contraste suficiente con los colores de fondo, eliminando errores de contraste.
 
 == Installation ==
 
