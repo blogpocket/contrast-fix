@@ -1,5 +1,5 @@
 === Contrast Fix ===
-Contributors: Antonio
+Contributors: Antonio Cambronero (Blogpocket.com)
 Tags: accessibility, contrast, texto
 Requires at least: 5.0
 Tested up to: 6.3
