@@ -17,6 +17,11 @@ Ajusta el color del texto dinámicamente para garantizar un contraste suficiente
 
 == Changelog ==
 
+= 1.1 =
+- observer.disconnect(): desconecta antes de tocar estilos para que no se vuelva a disparar en cascada.
+- observer.observe(...) sin attributes: true: ahora solo vigila nodos nuevos o eliminados, no cambios de atributos.
+- Corrección inicial con fixContrast() y luego solo en nuevos nodos.
+* Corrección para no bloquear las páginas
 = 1.0 =
 * Initial release: dynamic contrast adjustment.
 
