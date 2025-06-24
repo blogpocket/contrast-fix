@@ -2,8 +2,7 @@
 /*
 Plugin Name: Contrast Fix
 Description: Ajusta automáticamente el color de texto según el fondo.
-Author: Antonio Cambronero (Blogpocket.com)
-Version: 1.1
+Version: 1.0
 */
 function cf_enqueue_script(){
     wp_register_script('contrast-fix', false, [], null, true);
