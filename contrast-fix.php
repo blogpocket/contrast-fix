@@ -1,9 +1,11 @@
 <?php
 /*
 Plugin Name: Contrast Fix
-Description: Ajusta automáticamente el color de texto según el fondo.
+Description: Ajusta automáticamente el color del texto según el fondo para asegurar un contraste adecuado.
 Version: 1.0
+Author: A. Cambronero (Blogpocket.com)
 */
+
 function cf_enqueue_script(){
     wp_register_script('contrast-fix', false, [], null, true);
 
@@ -38,23 +40,18 @@ function cf_enqueue_script(){
 
   let observer;
   function fixContrast() {
-    // 1) Detenemos el observer para evitar loops
     observer.disconnect();
-    // 2) Aplicamos la corrección
     document.querySelectorAll('body *').forEach(el => {
       const rgb = getEffectiveRGB(el);
       const color = bestContrastColor(rgb);
       el.style.setProperty('color', color, 'important');
     });
-    // 3) Volvemos a observar únicamente nuevos nodos en el body
     observer.observe(document.body, { childList: true, subtree: true });
   }
 
   document.addEventListener('DOMContentLoaded', ()=>{
-    // Creamos el observer, sin 'attributes'
     observer = new MutationObserver(fixContrast);
     observer.observe(document.body, { childList: true, subtree: true });
-    // Primera pasada
     fixContrast();
   });
 })();
@@ -64,4 +61,3 @@ JS;
     wp_enqueue_script('contrast-fix');
 }
 add_action('wp_enqueue_scripts', 'cf_enqueue_script');
-
